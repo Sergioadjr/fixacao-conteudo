@@ -1,9 +1,6 @@
-package models;
+package com.example.demo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,23 +15,25 @@ import java.util.Collection;
 @AllArgsConstructor
 @Builder
 @Entity
-public class CadastroDePartida {
+public class Partida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private Collection<Usuario> usuario =  new ArrayList<>();;
+    @OneToMany(mappedBy = "usuario")
+    private Collection<Usuario> usuario =  new ArrayList<>();
     private Status status;
     private LocalDateTime horarioDeInicioProgramado;
     private LocalDateTime horarioDeFimProgramado;
     private LocalDateTime horarioRealDaPartida;
-    private String vencedor;
+    private boolean vencedor = false;
 
-    public CadastroDePartida(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha) {
-        this.nome = nome;
+    public Partida(Collection<Usuario> usuario, Status status, LocalDateTime horarioDeInicioProgramado,
+                   LocalDateTime horarioDeFimProgramado, LocalDateTime horarioRealDaPartida, boolean vencedor) {
         this.status = status;
         this.horarioDeInicioProgramado = horarioDeInicioProgramado;
         this.horarioDeFimProgramado = horarioDeFimProgramado;
         this.horarioRealDaPartida = horarioRealDaPartida;
         this.vencedor = vencedor;
     }
+
 }

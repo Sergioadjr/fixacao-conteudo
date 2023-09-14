@@ -1,4 +1,4 @@
-package models;
+package com.example.demo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,13 +25,15 @@ public class Usuario {
     private String nickname;
     private String email;
     private String senha;
+    private boolean reservaDePartida = false;
 
-    public Usuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha) {
+    public Usuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha, boolean reservaDePartida) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.nickname = nickname;
         this.email = email;
         this.senha = senha;
+        this.reservaDePartida = reservaDePartida;
     }
 }
 
