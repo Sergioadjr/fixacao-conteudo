@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.example.fixacaoConteudo.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,20 +15,24 @@ import java.util.Collection;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Partida {
+public class CadastroDePartida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @OneToMany(mappedBy = "jogo")
+    private Collection<CadastroDeJogo> jogoSelecionado;
     @OneToMany(mappedBy = "usuario")
-    private Collection<Usuario> usuario =  new ArrayList<>();
+    private Collection<CadastroDeUsuario> usuario;
     private Status status;
     private LocalDateTime horarioDeInicioProgramado;
     private LocalDateTime horarioDeFimProgramado;
     private LocalDateTime horarioRealDaPartida;
     private boolean vencedor = false;
 
-    public Partida(Collection<Usuario> usuario, Status status, LocalDateTime horarioDeInicioProgramado,
-                   LocalDateTime horarioDeFimProgramado, LocalDateTime horarioRealDaPartida, boolean vencedor) {
+    public CadastroDePartida(Collection<CadastroDeJogo> jogoSelecionado, Collection<CadastroDeUsuario> usuario, Status status, LocalDateTime horarioDeInicioProgramado,
+                             LocalDateTime horarioDeFimProgramado, LocalDateTime horarioRealDaPartida, boolean vencedor) {
+        this.jogoSelecionado = jogoSelecionado;
+        this.usuario = usuario;
         this.status = status;
         this.horarioDeInicioProgramado = horarioDeInicioProgramado;
         this.horarioDeFimProgramado = horarioDeFimProgramado;

@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.example.fixacaoConteudo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Usuario {
+public class CadastroDeUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -27,7 +27,7 @@ public class Usuario {
     private String senha;
     private boolean reservaDePartida = false;
 
-    public Usuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha, boolean reservaDePartida) {
+    public CadastroDeUsuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha, boolean reservaDePartida) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.nickname = nickname;

@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.example.fixacaoConteudo.models;
 
 public enum Status {
     PROGRAMADA,

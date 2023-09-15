@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.example.fixacaoConteudo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Jogo {
+public class CadastroDeJogo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -22,7 +22,7 @@ public class Jogo {
     private Categoria categoria;
     private String fornecedor;
 
-    public Jogo(String nome, Categoria categoria, String fornecedor) {
+    public CadastroDeJogo(String nome, Categoria categoria, String fornecedor) {
         this.nome = nome;
         this.categoria = categoria;
         this.fornecedor = fornecedor;
