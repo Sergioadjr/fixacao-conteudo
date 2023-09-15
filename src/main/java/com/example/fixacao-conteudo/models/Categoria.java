@@ -7,5 +7,6 @@ public enum Categoria {
     SIMULAÇÃO,
     PUZZLE,
     ESPORTES,
-    ESTRATEGIA
+    ESTRATEGIA,
+    FPS
 }
