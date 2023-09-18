@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-public class CadastroDeUsuario {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -27,7 +27,7 @@ public class CadastroDeUsuario {
     private String senha;
     private boolean reservaDePartida = false;
 
-    public CadastroDeUsuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha, boolean reservaDePartida) {
+    public Usuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha, boolean reservaDePartida) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.nickname = nickname;

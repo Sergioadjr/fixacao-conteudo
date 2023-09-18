@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class CadastroDeJogoResponseDTO {
-    private Long id;
+public class JogoRequestDTO {
     private String nome;
     private Categoria categoria;
     private String fornecedor;

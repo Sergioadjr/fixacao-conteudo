@@ -1,7 +1,7 @@
 package com.example.fixacaoConteudo.dtos;
 
-import com.example.fixacaoConteudo.models.CadastroDeJogo;
-import com.example.fixacaoConteudo.models.CadastroDeUsuario;
+import com.example.fixacaoConteudo.models.Jogos;
+import com.example.fixacaoConteudo.models.Usuario;
 import com.example.fixacaoConteudo.models.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,10 +15,10 @@ import java.util.Collection;
 @NoArgsConstructor
 @Data
 @Builder
-public class CadastroDePartidaResponseDTO {
+public class PartidaResponseDTO {
     private long id;
-    private Collection<CadastroDeJogo> jogoSelecionado;
-    private Collection<CadastroDeUsuario> usuario;
+    private Collection<Jogos> jogoSelecionado;
+    private Collection<Usuario> usuario;
     private Status status;
     private LocalDateTime horarioDeInicioProgramado;
     private LocalDateTime horarioDeFimProgramado;

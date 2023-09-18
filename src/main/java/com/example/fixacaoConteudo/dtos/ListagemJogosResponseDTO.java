@@ -13,5 +13,5 @@ import java.util.List;
 @AllArgsConstructor
 public class ListagemJogosResponseDTO {
     private PageInfoDTO pageInfo;
-    private List<CadastroDeJogoResponseDTO> jogos;
+    private List<JogoResponseDTO> jogos;
 }
