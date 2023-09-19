@@ -1,10 +1,21 @@
 package com.example.fixacaoConteudo.controllers;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.fixacaoConteudo.dtos.PartidaRequestDTO;
+import com.example.fixacaoConteudo.dtos.PartidaResponseDTO;
+import com.example.fixacaoConteudo.models.Partida;
+import com.example.fixacaoConteudo.services.JogosService;
 
 @RestController
 @RequiredArgsConstructor
@@ -12,18 +23,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/partidas")
 
 public class PartidaController {
-    @GetMapping("/iniciada")
-//    public ResponseEntity<ListagemAlunosResponseDTO> listarAlunosPresentes(
-//            @RequestParam(name = "dia") @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate dia,
-//            @RequestParam(name = "nome", required = false) String nomeAluno,
-//            @RequestParam(name = "etapaDeEnsinoId", defaultValue = "0") long etapaDeEnsinoId,
-//            @RequestParam(name = "currentPage", defaultValue = "1") int currentPage,
-//            @RequestParam(name = "pageSize", defaultValue = "10") int pageSize) {
-//
-//        var escola = escolaRepository.findAll().get(0);
-//        var listagem = alunoService.criarListaAlunosPresentes(dia, escola, nomeAluno, etapaDeEnsinoId, currentPage, pageSize);
-//        return ResponseEntity.ok(listagem);
-//    }
+
+    @Autowired
+    private PartidasService PartidasService;
+
+    @PostMapping
+    public ResponseEntity<PartidaResponseDTO> cadastrarPartida(@RequestBody PartidaRequestDTO partidaRequestDTO) {
+        Partida partida = partidasService.cadastrarPartida(partidaRequestDTO);
+        return new ResponseEntity<>(partida, HttpStatus.CREATED);
+    }
 }
-
-
