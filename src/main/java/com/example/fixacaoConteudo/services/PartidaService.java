@@ -1,5 +1,5 @@
 package com.example.fixacaoConteudo.services;
 
-public class JogosService {
+public class PartidaService {
     
 }

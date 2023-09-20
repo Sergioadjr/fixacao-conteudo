@@ -15,17 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.fixacaoConteudo.dtos.PartidaRequestDTO;
 import com.example.fixacaoConteudo.dtos.PartidaResponseDTO;
 import com.example.fixacaoConteudo.models.Partida;
-import com.example.fixacaoConteudo.services.JogosService;
+import com.example.fixacaoConteudo.services.JogoService;
 
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(value = "*")
 @RequestMapping("/api/v1/partidas")
-
 public class PartidaController {
 
     @Autowired
-    private PartidasService PartidasService;
+    private PartidaService PartidasService;
 
     @PostMapping
     public ResponseEntity<PartidaResponseDTO> cadastrarPartida(@RequestBody PartidaRequestDTO partidaRequestDTO) {

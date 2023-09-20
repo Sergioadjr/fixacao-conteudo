@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Jogos {
+public class Jogo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -22,7 +22,7 @@ public class Jogos {
     private Categoria categoria;
     private String fornecedor;
 
-    public Jogos(String nome, Categoria categoria, String fornecedor) {
+    public Jogo(String nome, Categoria categoria, String fornecedor) {
         this.nome = nome;
         this.categoria = categoria;
         this.fornecedor = fornecedor;

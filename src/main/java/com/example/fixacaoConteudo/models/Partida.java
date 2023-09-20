@@ -19,7 +19,7 @@ public class Partida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @OneToMany(mappedBy = "jogo")
-    private Collection<Jogos> jogoSelecionado;
+    private Collection<Jogo> jogoSelecionado;
     @OneToMany(mappedBy = "usuario")
     private Collection<Usuario> usuario;
     private Status status;
@@ -28,7 +28,7 @@ public class Partida {
     private LocalDateTime horarioRealDaPartida;
     private boolean vencedor = false;
 
-    public Partida(Collection<Jogos> jogoSelecionado, Collection<Usuario> usuario, Status status, LocalDateTime horarioDeInicioProgramado,
+    public Partida(Collection<Jogo> jogoSelecionado, Collection<Usuario> usuario, Status status, LocalDateTime horarioDeInicioProgramado,
                    LocalDateTime horarioDeFimProgramado, LocalDateTime horarioRealDaPartida, boolean vencedor) {
         this.jogoSelecionado = jogoSelecionado;
         this.usuario = usuario;
