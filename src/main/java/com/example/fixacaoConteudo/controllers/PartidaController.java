@@ -16,6 +16,7 @@ import com.example.fixacaoConteudo.dtos.PartidaRequestDTO;
 import com.example.fixacaoConteudo.dtos.PartidaResponseDTO;
 import com.example.fixacaoConteudo.models.Partida;
 import com.example.fixacaoConteudo.services.JogoService;
+import com.example.fixacaoConteudo.services.PartidaService;
 
 @RestController
 @RequiredArgsConstructor

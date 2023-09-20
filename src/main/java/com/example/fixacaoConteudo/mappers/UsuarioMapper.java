@@ -1,5 +1,8 @@
 package com.example.fixacaoConteudo.mappers;
 
-public class UsuarioMapper {
+import org.mapstruct.Mapper;
+
+@Mapper(componentModel = "spring")
+public interface UsuarioMapper {
     
 }
