@@ -24,12 +24,12 @@ import com.example.fixacaoConteudo.services.PartidaService;
 @RequestMapping("/api/v1/partidas")
 public class PartidaController {
 
-    @Autowired
-    private PartidaService PartidasService;
+    // @Autowired
+    // private PartidaService PartidasService;
 
-    @PostMapping
-    public ResponseEntity<PartidaResponseDTO> cadastrarPartida(@RequestBody PartidaRequestDTO partidaRequestDTO) {
-        Partida partida = partidasService.cadastrarPartida(partidaRequestDTO);
-        return new ResponseEntity<>(partida, HttpStatus.CREATED);
-    }
+    // @PostMapping
+    // public ResponseEntity<PartidaResponseDTO> cadastrarPartida(@RequestBody PartidaRequestDTO partidaRequestDTO) {
+    //     Partida partida = partidasService.cadastrarPartida(partidaRequestDTO);
+    //     return new ResponseEntity<>(partida, HttpStatus.CREATED);
+    // }
 }
