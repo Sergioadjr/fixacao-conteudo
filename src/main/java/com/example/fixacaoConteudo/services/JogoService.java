@@ -1,5 +1,7 @@
 package com.example.fixacaoConteudo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +17,19 @@ public class JogoService {
     private JogoRepository jogoRepository;
 
     public JogoResponseDTO cadastrarJogo(JogoRequestDTO jogoRequestDTO) {
-        Jogo jogo = JogoMapper.INSTANCE.jogoRequestDTOToJogo(jogoRequestDTO);
+        Jogo jogo = JogoMapper.INSTANCE.jogoRequestParaJogo(jogoRequestDTO);
         jogo = jogoRepository.save(jogo);
-        return JogoMapper.INSTANCE.jogoToJogoResponseDTO(jogo);
+        return JogoMapper.INSTANCE.jogoParaJogoResponse(jogo);
     }
+
+    public List<JogoResponseDTO> listarTodosOsJogos() {
+        List<Jogo> jogos = (List<Jogo>) jogoRepository.findAll();
+        return JogoMapper.INSTANCE.jogosParaJogosResponses(jogos);
+    }
+
+    public List<JogoResponseDTO> buscarJogosPorNome(String nome) {
+        List<Jogo> jogos = jogoRepository.findByNomeContainingIgnoreCase(nome);
+        return JogoMapper.INSTANCE.jogosParaJogosResponses(jogos);
+    }
+
 }

@@ -22,12 +22,12 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/v1/jogos")
 public class JogoController {
     @Autowired
-    private JogoService jogosService;
+    private JogoService jogoService;
 
     @PostMapping
     public ResponseEntity<JogoResponseDTO> cadastrarJogo(@RequestBody JogoRequestDTO jogoRequestDTO) {
-        Jogo jogo = jogosService.cadastrarJogo(jogoRequestDTO);
-        return new ResponseEntity<>(jogo, HttpStatus.CREATED);
+        JogoResponseDTO jogoResponseDTO = jogoService.cadastrarJogo(jogoRequestDTO); 
+        return new ResponseEntity<>(jogoResponseDTO, HttpStatus.CREATED);
     }
 
 }
