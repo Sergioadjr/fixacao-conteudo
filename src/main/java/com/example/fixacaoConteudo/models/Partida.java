@@ -18,14 +18,19 @@ public class Partida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToMany(mappedBy = "jogo")
+    // @ManyToMany(mappedBy = "jogos")
     private Collection<Jogo> jogoSelecionado;
-    @OneToMany(mappedBy = "usuario")
+    // @OneToMany(mappedBy = "usuarios")
     private Collection<Usuario> usuario;
     private Status status;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime horarioDeInicioProgramado;
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime horarioDeFimProgramado;
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime horarioRealDaPartida;
+    
     private boolean vencedor = false;
 
     public Partida(Collection<Jogo> jogoSelecionado, Collection<Usuario> usuario, Status status, LocalDateTime horarioDeInicioProgramado,
