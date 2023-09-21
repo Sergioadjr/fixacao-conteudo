@@ -1,17 +1,13 @@
 package com.example.fixacaoConteudo.mappers;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.example.fixacaoConteudo.dtos.JogoRequestDTO;
-import com.example.fixacaoConteudo.dtos.JogoResponseDTO;
 import com.example.fixacaoConteudo.dtos.UsuarioRequestDTO;
 import com.example.fixacaoConteudo.dtos.UsuarioResponseDTO;
-import com.example.fixacaoConteudo.models.Jogo;
 import com.example.fixacaoConteudo.models.Usuario;
 
 @Component

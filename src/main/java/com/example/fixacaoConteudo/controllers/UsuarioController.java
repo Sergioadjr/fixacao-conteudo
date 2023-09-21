@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.fixacaoConteudo.dtos.UsuarioRequestDTO;
 import com.example.fixacaoConteudo.dtos.UsuarioResponseDTO;
+import com.example.fixacaoConteudo.exceptions.IdadeInvalidaException;
+import com.example.fixacaoConteudo.exceptions.NicknameDuplicadoException;
 import com.example.fixacaoConteudo.services.UsuarioService;
 
 import lombok.RequiredArgsConstructor;
@@ -24,7 +26,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<UsuarioResponseDTO> cadastrarUsuario(@RequestBody UsuarioRequestDTO usuarioRequestDTO) {
+    public ResponseEntity<UsuarioResponseDTO> cadastrarUsuario(@RequestBody UsuarioRequestDTO usuarioRequestDTO) throws IdadeInvalidaException, NicknameDuplicadoException {
         UsuarioResponseDTO usuarioResponseDTO = usuarioService.cadastrarUsuario(usuarioRequestDTO);
         return new ResponseEntity<>(usuarioResponseDTO, HttpStatus.CREATED);
     }
