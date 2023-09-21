@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.fixacaoConteudo.dtos.JogoRequestDTO;
 import com.example.fixacaoConteudo.dtos.JogoResponseDTO;
-import com.example.fixacaoConteudo.models.Jogo;
 import com.example.fixacaoConteudo.services.JogoService;
 
 import lombok.RequiredArgsConstructor;
