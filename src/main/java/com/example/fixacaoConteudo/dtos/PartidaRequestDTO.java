@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 
 public class PartidaRequestDTO {
-    private Collection<Jogo> jogoSelecionado;
-    private Collection<Usuario> usuario;
+    private Jogo jogo;
+    private Collection<Usuario> usuarios;
     private Status status;
     private LocalDateTime horarioDeInicioProgramado;
     private LocalDateTime horarioDeFimProgramado;

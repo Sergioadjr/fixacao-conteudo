@@ -7,6 +7,5 @@ import com.example.fixacaoConteudo.models.Partida;
 
 @Repository
 public interface PartidaRepository extends CrudRepository<Partida, Long> {
-    Long deleteByNomeContaining(String nome);
 
 }

@@ -5,12 +5,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
+import org.hibernate.annotations.ManyToAny;
+import org.springframework.data.repository.query.parser.Part;
 
 @Data
 @NoArgsConstructor
@@ -29,7 +34,11 @@ public class Usuario {
     private String email;
     @Column(length = 120, nullable = false)
     private String senha;
+
     private boolean reservaDePartida = false;
+
+    @ManyToMany(mappedBy = "usuarios")
+    private List<Partida> partidas;
 
     public Usuario(String nome, LocalDateTime dataDeNascimento, String nickname, String email, String senha, boolean reservaDePartida) {
         this.nome = nome;

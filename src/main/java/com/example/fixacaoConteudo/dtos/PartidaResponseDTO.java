@@ -17,8 +17,8 @@ import java.util.Collection;
 @Builder
 public class PartidaResponseDTO {
     private long id;
-    private Collection<Jogo> jogoSelecionado;
-    private Collection<Usuario> usuario;
+    private Jogo jogo;
+    private Collection<Usuario> usuarios;
     private Status status;
     private LocalDateTime horarioDeInicioProgramado;
     private LocalDateTime horarioDeFimProgramado;
