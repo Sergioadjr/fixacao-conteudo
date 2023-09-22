@@ -34,14 +34,13 @@ public class Partida {
     private boolean vencedor = false;
 
     public Partida(Jogo jogo, Collection<Usuario> usuarios, Status status, LocalDateTime horarioDeInicioProgramado,
-                   LocalDateTime horarioDeFimProgramado, LocalDateTime horarioRealDaPartida, boolean vencedor) {
+                   LocalDateTime horarioDeFimProgramado, LocalDateTime horarioRealDaPartida) {
         this.jogo = jogo;
         this.usuarios = usuarios;
         this.status = status;
         this.horarioDeInicioProgramado = horarioDeInicioProgramado;
         this.horarioDeFimProgramado = horarioDeFimProgramado;
         this.horarioRealDaPartida = horarioRealDaPartida;
-        this.vencedor = vencedor;
     }
 
 }
